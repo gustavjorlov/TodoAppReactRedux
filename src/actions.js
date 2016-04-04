@@ -13,7 +13,6 @@ export const addTodo = (text) => {
     return {type: ADD_TODO, text: text, id: nextTodoId++};
 }
 export const completeTodo = (index) => {
-    console.log("completeTodo", index);
     return {type: COMPLETE_TODO, index: index};
 }
 export const setVisibilityFilter = (filter) => {
