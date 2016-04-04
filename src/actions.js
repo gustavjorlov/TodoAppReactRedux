@@ -8,10 +8,12 @@ export const VisibilityFilters = {
     SHOW_ACTIVE: 'SHOW_ACTIVE'
 };
 
-const addTodo = (text) => return {type: ADD_TODO, text};
-const completeTodo = (index) => return {type: COMPLETE_TODO, index};
-const setVisibilityFilter = (filter) => return {type: SET_VISIBILITY_FILTER, filter};
-
-export addTodo;
-export completeTodo;
-export setVisibilityFilter;
+export const addTodo = (text) => {
+    return {type: ADD_TODO, text: text};
+}
+export const completeTodo = (index) => {
+    return {'type': COMPLETE_TODO, 'index': index};
+}
+export const setVisibilityFilter = (filter) => {
+    return {type: SET_VISIBILITY_FILTER, filter: filter};
+}
