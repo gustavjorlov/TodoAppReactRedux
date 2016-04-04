@@ -6,13 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "browserify src/index -t babelify --debug -o dist/bundle.js",
-    "start": "node dist/bundle.js"
+    "start": "http-server dist",
+    "copy:html": "cp src/index.html dist/",
+    "build": "npm run compile && npm run copy:html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "react": "^0.14.8",
+    "react-dom": "^0.14.8",
     "react-redux": "^4.4.1",
     "redux": "^3.3.1"
   },

@@ -5,7 +5,7 @@ const {SHOW_ALL} = VisibilityFilters;
 const visibilityFilter = (state = SHOW_ALL, action) => {
     switch(action.type){
         case SET_VISIBILITY_FILTER:
-            return action.fiter;
+            return action.filter;
         default:
             return state;
     }
@@ -17,6 +17,7 @@ const todos = (state = [], action) => {
             return [
                 ...state,
                 {
+                    id: action.id,
                     text: action.text,
                     completed: false
                 }
@@ -25,7 +26,7 @@ const todos = (state = [], action) => {
             return state.map((todo, index) => {
                 if(index === action.index){
                     return Object.assign({}, todo, {
-                        completed: true
+                        completed: !todo.completed
                     });
                 }
                 return todo;
