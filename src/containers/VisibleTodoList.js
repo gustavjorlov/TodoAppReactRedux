@@ -16,8 +16,10 @@ const getVisibleTodos = (todos, filter) => {
 }
 
 const mapStateToProps = (state) => {
+    const todos = getVisibleTodos(state.todos, state.visibilityFilter);
     return {
-        todos: getVisibleTodos(state.todos, state.visibilityFilter)
+        todos: todos,
+        count: todos.length
     };
 }
 
@@ -25,6 +27,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onTodoClick: (id) => {
             dispatch(completeTodo(id));
+        },
+        onTodoHover: (text) => {
+            console.log(`onTodoHover ${text}`);
         }
     };
 }

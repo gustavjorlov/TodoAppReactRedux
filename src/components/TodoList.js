@@ -1,14 +1,18 @@
 import React, {PropTypes} from 'react';
 import Todo from './Todo';
 
-const TodoList = ({todos, onTodoClick}) => (
-    <ul>
-        {todos.map(todo =>
-            <Todo key={todo.id}
-                {...todo}
-                onClick={() => onTodoClick(todo.id)} />
-        )}
-    </ul>
+const TodoList = ({todos, onTodoClick, onTodoHover, count}) => (
+    <div>
+        <h2>{count} todos:</h2>
+        <ul>
+            {todos.map(todo =>
+                <Todo key={todo.id}
+                    {...todo}
+                    onClick={() => onTodoClick(todo.id)}
+                    onMouseEnter={() => onTodoHover(todo.text)} />
+            )}
+        </ul>
+    </div>
 )
 
 TodoList.propTypes = {

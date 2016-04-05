@@ -1,7 +1,8 @@
 import React, {PropTypes} from 'react';
 
-const Todo = ({onClick, completed, text}) => (
+const Todo = ({onClick, onMouseEnter, completed, text}) => (
     <li onClick={onClick}
+        onMouseEnter={onMouseEnter}
         style={{
             textDecoration: completed ? 'line-through' : 'none'
         }}>{text}</li>
